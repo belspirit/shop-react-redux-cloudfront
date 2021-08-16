@@ -1,3 +1,12 @@
+### 3-4 - Manually created S3 Bucket and CloudFront:
+[https://d377fzxelkjmkn.cloudfront.net/](https://d377fzxelkjmkn.cloudfront.net/)
+[http://labetik-first-app.s3-website-us-east-1.amazonaws.com/](http://labetik-first-app.s3-website-us-east-1.amazonaws.com/)
+
+### 5 - Serverless-finch and serverless-single-page-app plugins are added and configured
+[https://d3uzd1basct6ku.cloudfront.net/](https://d3uzd1basct6ku.cloudfront.net/)
+[http://labetik-second-app.s3-website-us-east-1.amazonaws.com/](http://labetik-second-app.s3-website-us-east-1.amazonaws.com/)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
