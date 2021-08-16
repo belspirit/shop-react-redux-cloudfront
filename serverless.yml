@@ -17,7 +17,7 @@ plugins:
 
 custom:
   client:
-    bucketName: node-in-aws-web-bucket
+    bucketName: labetik-second-app
     distributionFolder: build
   s3BucketName: ${self:custom.client.bucketName}
 
