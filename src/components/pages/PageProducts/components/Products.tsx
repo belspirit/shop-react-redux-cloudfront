@@ -1,26 +1,26 @@
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import axios from 'axios';
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles } from "@material-ui/core/styles";
+import Typography from "@material-ui/core/Typography";
+import axios from "axios";
 import AddProductToCart from "components/AddProductToCart/AddProductToCart";
 import API_PATHS from "constants/apiPaths";
 import { Product } from "models/Product";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { formatAsPrice } from "utils/utils";
 //import productList from "./productList.json";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   card: {
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: "56.25%", // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -36,9 +36,11 @@ export default function Products() {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    axios.get(`${API_PATHS.product}`).then(res => setProducts(res.data.products));
+    axios
+      .get(`${API_PATHS.product}/products`)
+      .then(res => setProducts(res.data.products));
     //setProducts(productList);
-  }, [])
+  }, []);
 
   return (
     <Grid container spacing={4}>
@@ -54,12 +56,10 @@ export default function Products() {
               <Typography gutterBottom variant="h5" component="h2">
                 {product.title}
               </Typography>
-              <Typography>
-                {formatAsPrice(product.price)}
-              </Typography>
+              <Typography>{formatAsPrice(product.price)}</Typography>
             </CardContent>
             <CardActions>
-              <AddProductToCart product={product}/>
+              <AddProductToCart product={product} />
             </CardActions>
           </Card>
         </Grid>
